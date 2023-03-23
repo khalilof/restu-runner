@@ -1,4 +1,6 @@
-import './globals.css'
+import './globals.scss'
+import { NavBar } from '@/app/common/nav-bar';
+import styles from '@/app/page.module.scss'
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +14,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+    <head>
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    </head>
+      <body>
+      <NavBar></NavBar>
+      <main className={styles.main}>
+          {children}
+      </main>
+      <footer className={styles.footer}>
+        Next.js @Ausy Technologies Germany 2023
+      </footer>
+      </body>
     </html>
   )
 }
